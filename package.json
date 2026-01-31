@@ -1,0 +1,12 @@
+{
+  "name": "hexo-theme-hydrogen",
+  "version": "1.1.0",
+  "license": "MIT",
+  "description": "Hexo Theme Hydrogen",
+  "repository": "https://github.com/CoderFrish/hexo-theme-hydrogen",
+  "keywords": [
+    "hexo",
+    "theme",
+    "hydrogen"
+  ]
+}

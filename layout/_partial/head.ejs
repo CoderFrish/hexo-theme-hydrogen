@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- 标题 -->
+<title><%= page.title ? page.title + ' | ' + config.title : config.title %></title>
+
+<!-- 网站描述 -->
+<meta name="description" content="<%= page.description || page.excerpt || config.description %>">
+<meta name="keywords" content="<%= page.tags ? page.tags.map(t => t.name).join(',') : config.keywords %>">
+<meta name="author" content="<%= config.author %>">
+
+<!-- Open Graph -->
+<meta property="og:type" content="<%= is_post() ? 'article' : 'website' %>">
+<meta property="og:title" content="<%= page.title || config.title %>">
+<meta property="og:description" content="<%= page.description || page.excerpt || config.description %>">
+<meta property="og:url" content="<%= url %>">
+<meta property="og:site_name" content="<%= config.title %>">
+<% if (page.cover) { %>
+<meta property="og:image" content="<%= page.cover %>">
+<% } %>
+
+<!-- Favicon -->
+<% if (theme.favicon) { %>
+<link rel="icon" href="<%= url_for(theme.favicon) %>">
+<% } %>
+
+<!-- 预连接 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- 字体 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- 样式表 -->
+<%- css('css/style.css') %>
+
+<!-- RSS -->
+<% if (config.feed && config.feed.path) { %>
+<link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>">
+<% } %>
+
+<!-- 规范链接 -->
+<link rel="canonical" href="<%= url %>">
+
+<!-- 主题色 -->
+<meta name="theme-color" content="<%= theme.appearance.primary_color || '#2563eb' %>" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1e293b" media="(prefers-color-scheme: dark)">
+
+<!-- 自定义样式变量 -->
+<style>
+  :root {
+    --primary-color: <%= theme.appearance.primary_color || '#2563eb' %>;
+  }
+</style>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'zh-CN' %>" data-theme="light">
+<head>
+  <%- partial('_partial/head') %>
+</head>
+<body>
+  <%- partial('_partial/header') %>
+  
+  <main class="main-content">
+    <div class="container">
+      <%- body %>
+    </div>
+  </main>
+
+  <%- partial('_partial/footer') %>
+  
+  <!-- 搜索模态框 -->
+  <% if (theme.search.enable) { %>
+    <%- partial('_partial/search') %>
+  <% } %>
+
+  <!-- 站点配置 -->
+  <script>
+    window.STARTER_CONFIG = {
+      root: '<%- config.root %>',
+      searchEnabled: <%= theme.search.enable %>
+    };
+  </script>
+
+  <!-- 主脚本 -->
+  <%- js('js/main.js') %>
+  
+  <% if (theme.search.enable) { %>
+    <%- js('js/search.js') %>
+  <% } %>
+</body>
+</html>

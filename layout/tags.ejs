@@ -1,0 +1,21 @@
+<div class="page-layout tags-layout">
+  <div class="tags-wrapper">
+    <header class="tags-header">
+      <h1 class="tags-title">标签</h1>
+      <p class="tags-count">共 <%= site.tags.length %> 个标签</p>
+    </header>
+
+    <div class="tags-cloud">
+      <%
+      // 按文章数量降序排序
+      const sortedTags = site.tags.toArray().sort((a, b) => b.posts.length - a.posts.length);
+      sortedTags.forEach(function(tag) {
+      %>
+        <a href="<%- url_for(tag.path) %>" class="tag-cloud-item" data-count="<%= tag.posts.length %>">
+          <%= tag.name %>
+          <span class="tag-count">(<%= tag.posts.length %>)</span>
+        </a>
+      <% }) %>
+    </div>
+  </div>
+</div>

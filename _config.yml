@@ -1,0 +1,82 @@
+# Starter Theme Configuration
+# 主题配置文件
+
+# ===== 站点信息 =====
+# 这些信息会覆盖 Hexo 根目录的配置
+favicon: /images/favicon.ico
+
+# ===== 导航菜单 =====
+menu:
+  首页: /
+  归档: /archives
+  标签: /tags
+
+# ===== 社交链接 =====
+social:
+  github: https://github.com/CoderFrish
+  email: mailto:1573880184@qq.com
+
+# ===== 侧边栏配置 =====
+sidebar:
+  # 显示最新文章数量
+  recent_posts: 5
+  # 是否显示标签云
+  show_tags: true
+  # 是否显示归档
+  show_archives: true
+
+post:
+  # 字数统计
+  word_count: true
+  # 阅读时间估算
+  reading_time: true
+  # 每分钟阅读字数
+  words_per_minute: 300
+  # 显示更新时间
+  show_updated: true
+  # 显示版权信息
+  copyright: true
+
+# ===== 搜索配置 =====
+search:
+  enable: true
+  # 搜索内容：title, content, tags
+  fields:
+    - title
+    - content
+    - tags
+  # 搜索结果摘要长度
+  excerpt_length: 100
+
+# ===== 图片设置 =====
+images:
+  # 图片懒加载
+  lazyload: true
+  # 图片灯箱效果
+  lightbox: true
+
+# ===== 主题外观 =====
+appearance:
+  # 默认主题：light / dark / auto
+  default_theme: auto
+  # 主题色
+  primary_color: "#2563eb"
+  # 是否显示主题切换按钮
+  theme_toggle: true
+
+# ===== 页脚配置 =====
+footer:
+  # 建站年份
+  since: 2025
+  # 备案信息（中国大陆）
+  icp:
+  # 自定义内容（支持 HTML）
+  custom:
+
+# ===== TOC 目录 =====
+toc:
+  enable: true
+  # 最大深度
+  max_depth: 3
+  # 自动编号
+  number: true

@@ -1,0 +1,93 @@
+<aside class="blog-sidebar">
+  <!-- 作者信息 -->
+  <div class="sidebar-widget author-widget">
+    <div class="author-avatar">
+      <% if (config.author_avatar) { %>
+        <img src="<%- url_for(config.author_avatar) %>" alt="<%= config.author %>">
+      <% } else { %>
+        <div class="avatar-placeholder">
+          <%= config.author ? config.author.charAt(0).toUpperCase() : 'A' %>
+        </div>
+      <% } %>
+    </div>
+    <h3 class="author-name"><%= config.author || config.title %></h3>
+    <p class="author-desc"><%= config.description %></p>
+    <div class="author-stats">
+      <div class="stat-item">
+        <span class="stat-count"><%= site.posts.length %></span>
+        <span class="stat-label">文章</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-count"><%= site.tags.length %></span>
+        <span class="stat-label">标签</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-count"><%= site.categories.length %></span>
+        <span class="stat-label">分类</span>
+      </div>
+    </div>
+
+    <a class="author-about" href="/about">
+      关于我
+    </a>
+  </div>
+
+  <!-- 最新文章 -->
+  <% if (theme.sidebar.recent_posts) { %>
+    <div class="sidebar-widget recent-posts-widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul class="recent-posts-list">
+        <% site.posts.sort('date', 'desc').limit(theme.sidebar.recent_posts).each(function(post) { %>
+          <li class="recent-post-item">
+            <a href="<%- url_for(post.path) %>">
+              <span class="recent-post-title"><%= post.title %></span>
+              <span class="recent-post-date"><%= date(post.date, 'MM-DD') %></span>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+  <!-- 标签云 -->
+  <% if (theme.sidebar.show_tags && site.tags.length) { %>
+    <div class="sidebar-widget tags-widget">
+      <h3 class="widget-title">标签</h3>
+      <div class="sidebar-tags">
+        <% site.tags.sort('name').each(function(tag) { %>
+          <a href="<%- url_for(tag.path) %>" class="sidebar-tag">
+            <%= tag.name %><span class="tag-count"><%= tag.posts.length %></span>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+
+  <!-- 归档 -->
+  <% if (theme.sidebar.show_archives) { %>
+    <div class="sidebar-widget archives-widget">
+      <h3 class="widget-title">归档</h3>
+      <ul class="archives-list">
+        <% 
+          const archives = {};
+          site.posts.each(function(post) {
+            const key = date(post.date, 'YYYY-MM');
+            if (!archives[key]) {
+              archives[key] = { date: post.date, count: 0 };
+            }
+            archives[key].count++;
+          });
+          const sortedArchives = Object.keys(archives).sort().reverse().slice(0, 12);
+        %>
+        <% sortedArchives.forEach(function(key) { %>
+          <li class="archive-item">
+            <a href="<%- url_for('/archives/' + key.replace('-', '/') + '/') %>">
+              <span class="archive-date"><%= key %></span>
+              <span class="archive-count">(<%= archives[key].count %>)</span>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+</aside>
