@@ -23,3 +23,12 @@ git clone https://github.com/CoderFrish/hexo-theme-hydrogen.git themes/hydrogen
 ```diff
 theme: hydrogen
 ```
+
+### 1.4 | 更多方法
+
+可以用npm来安装
+```bash
+npm install hexo-theme-hydrogen
+```
+
+剩下同理
