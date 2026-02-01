@@ -48,3 +48,13 @@ hexo默认的hexo-renderer-mark是不支持数学公式的，所以我们需要�
 +  "@renbaoshuo/markdown-it-katex": "^2.0.2"
 }
 ```
+
+同时添加以下
+
+```yaml
+markdown:
+  plugins:
+    - name: '@renbaoshuo/markdown-it-katex'
+      options:
+        skipDelimitersCheck: true
+```
