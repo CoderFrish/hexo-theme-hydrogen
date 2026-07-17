@@ -1,0 +1,23 @@
+.author
+    .avatar
+        img(src=url_for(theme.author.avatar))
+
+    h3 #{theme.author.name}
+
+    p #{theme.author.description}
+
+    .about
+        a(href="/about") 关于我
+
+- if (theme.widget.recent.enabled) {
+    .recent
+        h3 最新文章
+
+        ul
+            - site.posts.sort('date', 'desc').limit(5).each(function(post) {
+                li
+                    a(href=url_for(post.path))
+                        span(class="title") #{post.title}
+                        span(class="date") #{date(post.date, 'MM-DD')}
+            - })
+- }

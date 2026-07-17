@@ -1,0 +1,13 @@
+.layout
+    .copyright
+        span © 2024 - #{new Date().getFullYear()}&nbsp;
+        a(href=theme.author.website) #{theme.author.name}
+    .social
+        a(href=("mailto:" + theme.author.email) class="mail")
+            iconify-icon(icon="mdi:email-outline")
+    .powered
+        span Powered by&nbsp;
+        a(href="https://hexo.io/") Hexo&nbsp;
+        span |&nbsp;
+        span Theme&nbsp;
+        a(href="https://github.com/CoderFrish/hexo-theme-hydrogen/") Hydrogen

@@ -1,0 +1,88 @@
+header {
+  .background, .mobile-background  {
+    border-bottom 1px solid var(--border-normal-color)
+    backdrop-filter blur(10px)
+
+    /* 这里是因为byd Stylus不给 in oklab, 我真没招了（） */
+    background-color unquote('color-mix(in oklab, var(--bg-primary-color) 90%, transparent)')
+  }
+
+  .mobile-background {
+    margin-top -1px
+  }
+
+  .mobile-layout {
+    ul {
+      list-style none
+
+      li {
+        border-radius var(--radius-md)
+        transition all 150ms ease
+
+        a {
+          text-decoration none
+        }
+
+        a.active {
+          color: var(--primary-normal-color)
+        }
+
+        &:hover {
+          background-color var(--bg-hover-color)
+        }
+      }
+    }
+  }
+
+  h1 {
+    color var(--text-primary-color)
+    font-size var(--text-xl)
+    letter-spacing .02rem
+  }
+
+  .navigation {
+    a {
+      text-decoration none
+      border-radius var(--radius-md)
+      transition all 150ms ease
+      font-weight 500
+      font-size var(--text-sm)
+    }
+
+    a.inactive {
+      color var(--text-secondary-color)
+
+      &:hover {
+        color var(--text-primary-color)
+        background-color var(--bg-hover-color)
+      }
+    }
+
+    a.active {
+      color var(--primary-normal-color)
+      background-color var(--primary-light-color)
+    }
+  }
+
+  .toolbar {
+    ul {
+      list-style none
+
+      li button {
+        background none
+        border none
+        font-family inherit
+        font-size var(--text-2xl)
+        border-radius var(--radius-md)
+        transition all 150ms ease
+        color var(--text-secondary-color)
+
+        &:hover {
+          background-color var(--bg-hover-color)
+          cursor pointer
+          color var(--text-primary-color)
+        }
+      }
+    }
+  }
+}

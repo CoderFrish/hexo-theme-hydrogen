@@ -1,0 +1,25 @@
+extends _include/layout
+
+block content
+    .post-layout
+        .content
+            - if (page.cover) {
+                img(src=url_for(page.cover) class="cover")
+            - }
+
+            h1(class="title") #{page.title}
+
+            .meta
+                ul
+                    li
+                        iconify-icon(icon="uil:calender")
+                        span #{date(page.updated, 'YYYY-MM-DD')}
+
+                    li
+                        - const content = strip_html(page.content);
+                        - const word = content.length;
+                        - const display = word >= 1000 ? (word / 1000).toFixed(1) + 'k' : word;
+                        iconify-icon(icon="mingcute:align-left-line")
+                        span 大约 #{display} 字
+
+            .markdown-body !{page.content}

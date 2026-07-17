@@ -1,0 +1,15 @@
+title #{page.title ? page.title + ' | ' + config.title : config.title}
+meta(charset="utf-8")
+meta(name="description" content=config.description)
+link(rel="stylesheet" href=url_for("styles/style.css") type="text/css")
+
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+link(rel="preconnect" href="https://cdn.jsdelivr.net/")
+
+script(src=url_for("scripts/script.js"))
+script(src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")
+
+- if (config.favicon) {
+    link(rel="icon" href=url_for(config.favicon))
+- }

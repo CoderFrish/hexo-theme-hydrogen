@@ -1,0 +1,319 @@
+/* 这里主要放的是样式的基础属性，比如width，z-index */
+/* 下面的那些import里面写的是让样式能看的属性 */
+@import "_partial/header.styl"
+@import "_partial/footer.styl"
+@import "_partial/content.styl"
+
+header {
+  width 100%
+  position fixed
+  z-index var(--z-index-sticky)
+
+  .mobile-background.inactive {
+    display none
+  }
+
+  .mobile-layout {
+    display flex
+    flex-direction column
+
+    padding var(--spacing-md)
+
+    ul li a {
+      display block
+      padding var(--spacing-md)
+    }
+  }
+
+  .layout {
+    max-width  1280px
+    height 65px
+
+    display flex
+    align-items center
+
+    margin 0 auto
+    padding 0 var(--spacing-lg)
+
+    .navigation {
+      flex 1
+      display flex
+      justify-content center
+
+      ul {
+        list-style none
+
+        display flex
+        flex-direction row
+        gap var(--spacing-md)
+
+        a {
+          display inline-block
+          padding var(--spacing-sm) var(--spacing-md)
+        }
+      }
+    }
+
+    .toolbar {
+      ul {
+        display flex
+        flex-direction row
+        gap var(--spacing-sm)
+
+        li button {
+          height 40px
+          width 40px
+
+          display flex
+          align-items center
+          justify-content center
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding calc(var(--spacing-2xl) + 65px) 0 var(--spacing-2xl) 0
+  min-height calc(100vh - var(--spacing-2xl) - 65px - 70px)
+
+  .about-layout {
+    max-width 768px
+    margin 0 auto
+    padding 0 var(--spacing-lg)
+
+    display flex
+    flex-direction column
+    gap var(--spacing-md)
+
+    .title {
+      display flex
+      justify-content center
+      margin-bottom  var(--spacing-md)
+    }
+  }
+
+  .post-layout {
+    max-width 1064px
+    margin 0 auto
+    padding 0 var(--spacing-lg)
+
+    display flex
+    flex-direction row
+    gap var(--spacing-md)
+    flex-wrap nowrap
+
+    .content {
+      flex 1
+
+      .title {
+        margin-bottom  var(--spacing-md)
+      }
+
+      .meta {
+        padding-bottom var(--spacing-xl)
+
+        ul {
+          display flex
+          align-items center
+          flex-direction row
+          gap var(--spacing-sm)
+        }
+      }
+    }
+  }
+
+  .index-layout {
+    max-width 1280px
+    margin 0 auto
+    padding 0 var(--spacing-lg)
+
+    display flex
+    flex-direction row
+    gap var(--spacing-md)
+    flex-wrap nowrap
+
+    .articles {
+      display flex
+      flex-direction column
+      gap var(--spacing-xl)
+
+      .article {
+        padding var(--spacing-md)
+
+        .cover {
+          width 100%
+          margin-bottom var(--spacing-xs)
+          border-radius var(--radius-md)
+        }
+
+        .title {
+          display block
+          margin-bottom var(--spacing-sm);
+        }
+
+        .meta {
+          margin-bottom var(--spacing-sm);
+
+          ul {
+            list-style: none;
+            display flex
+            align-items center
+            flex-direction row
+            gap var(--spacing-sm)
+
+            li {
+              display flex
+              align-items center
+              gap var(--spacing-xs)
+            }
+          }
+        }
+
+        .excerpt {
+          margin-bottom var(--spacing-sm);
+        }
+
+        /* 这里我真没招了，原本想着只用一个flex */
+        .read {
+          display inline-flex
+          align-items center
+          gap var(--spacing-xs)
+          transition all 150ms ease
+          color var(--primary-normal-color)
+          font-size var(--text-sm)
+          font-weight 500
+
+          iconify-icon {
+            display inline-flex
+            align-items center
+          }
+
+          &:hover {
+            gap var(--spacing-sm)
+          }
+        }
+      }
+    }
+
+    .sidebar {
+      width 300px
+      display flex
+      flex-direction column
+      gap var(--spacing-md)
+
+      .author, .recent {
+        padding var(--spacing-lg)
+      }
+
+      .recent {
+        h3 {
+          margin-bottom var(--spacing-md)
+        }
+
+        ul {
+          li {
+            padding var(--spacing-sm) 0
+            border-bottom 1px solid var(--border-normal-color)
+
+            a {
+              display flex
+              justify-content space-between
+              gap var(--spacing-sm)
+
+              .text {
+                flex 1
+                padding-right var(--spacing-sm)
+              }
+
+              .date {
+                padding-left var(--spacing-sm)
+              }
+            }
+          }
+        }
+      }
+
+      .author {
+        text-align center
+
+        .avatar {
+          width 80px
+          height 80px
+          margin 0 auto var(--spacing-lg)
+
+          img {
+            width 100%
+            height 100%
+            object-fit cover
+          }
+        }
+
+        h3 {
+          margin 0 auto var(--spacing-xs)
+        }
+
+        p {
+          margin-bottom var(--spacing-md)
+        }
+
+        .about a {
+          display inline-block
+          width calc(100% - 40px)
+          padding var(--spacing-sm) 0
+        }
+      }
+    }
+
+    .articles {
+      flex 1
+    }
+  }
+}
+
+footer {
+  padding var(--spacing-2xl) 0
+
+  .layout {
+    max-width 1280px
+    margin 0 auto
+    padding 0 var(--spacing-lg)
+
+    display flex
+    justify-content center
+    align-items center
+    flex-direction row
+    flex-wrap wrap
+    gap var(--spacing-md)
+
+    .social a {
+      display flex
+      justify-content center
+      align-items center
+      width 36px
+      height 36px
+    }
+  }
+}
+
+@media (min-width 678px) {
+  header .mobile-background {
+    display none
+  }
+
+  header .background .layout .toolbar #mobile_menu_btn {
+    display none
+  }
+}
+
+@media (max-width: 678px) {
+  header .background .layout .navigation ul {
+    display none
+  }
+}
+
+@media (max-width: 1024px) {
+  main .index-layout .sidebar {
+    display none
+  }
+}
