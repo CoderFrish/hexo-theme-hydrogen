@@ -3,5 +3,5 @@ hexo.extend.helper.register("current_path", function() {
     return "/" + current
         .replace(/^\//, "")
         .replace(/\/$/, "")
-        .replace(/index\.html$/, "");
+        .replace(/\.html$/, "")
 })
