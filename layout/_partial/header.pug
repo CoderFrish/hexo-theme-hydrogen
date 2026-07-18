@@ -10,7 +10,7 @@
         .navigation
             ul
                 li
-                    a(href="/" class=is_active("/")) 主页
+                    a(href="/" class=(((current_path() === "/") || (current_path() === "/page/" + page.current + "/"))? "active": "inactive")) 主页
 
         .toolbar
             // 等我后面再慢慢写吧

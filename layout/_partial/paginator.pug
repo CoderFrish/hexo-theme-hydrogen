@@ -1,0 +1,44 @@
+- if (page.total > 1) {
+    nav(class="pagination")
+        - if (page.prev) {
+            a(href=url_for(page.prev_link) class="page-link prev") 上一页
+        - } else {
+            span(class="page-link prev disabled") 上一页
+        - }
+
+        .page-numbers
+            - const current = page.current;
+            - const total = page.total
+            - const start = Math.max(1, current - 2)
+            - const end = Math.min(total, current + 2)
+
+            - if (start > 1) {
+                a(href=url_for(page.base) class="page-number") 1
+
+                - if (start > 2) {
+                    span(class="page-ellipsis") ...
+                - }
+            - }
+
+            - for (let i = start;i <= end;i++) {
+                - if (i === current) {
+                    span(class="page-number current") #{i}
+                - } else {
+                    a(href=url_for(page.base + (i === 1? '': config.pagination_dir + '/' + i + '/')) class="page-number") #{i}
+                - }
+            - }
+
+            - if (end < total) {
+                - if (end < total - 1) {
+                    span(class="page-ellipsis") ...
+                - }
+
+                a(href=url_for(page.base + (page.base + config.pagination_dir + '/' + total + '/')) class="page-number") #{total}
+            - }
+
+        - if (page.next) {
+            a(href=url_for(page.next_link) class="page-link next") 下一页
+        - } else {
+            span(class="page-link next disabled") 下一页
+        - }
+- }
