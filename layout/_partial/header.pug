@@ -7,8 +7,8 @@
             ul
                 li
                     a(href="/" class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
-                li
-                    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
+                //li
+                //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
 
         .toolbar
             // 等我后面再慢慢写吧
@@ -27,7 +27,7 @@
 .mobile-background.inactive
     .mobile-layout
         ul
-            - for (let name in theme.navigations) {
-                li
-                    a(href=url_for(theme.navigations[name]) class=(((current_path() === "/") || (current_path() === "/page/" + page.current + "/"))? "active": "inactive")) #{name}
-            - }
+            li
+                a(href=url_for("/") class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
+            //li
+            //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
