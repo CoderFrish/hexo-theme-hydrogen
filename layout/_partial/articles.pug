@@ -1,0 +1,29 @@
+- page.posts.sort('date', -1).each(function(post) {
+    article(class="article")
+        - if (post.cover) {
+            img(src=url_for(post.cover) class="cover")
+        - }
+
+        a(href=url_for(post.path) class="title") #{post.title}
+
+        .meta
+            ul
+                li
+                    iconify-icon(icon="uil:calender")
+                    span #{date(post.updated, 'YYYY-MM-DD')}
+
+                li
+                    - const content = strip_html(post.content);
+                    - const word = content.length;
+                    - const display = word >= 1000 ? (word / 1000).toFixed(1) + 'k' : word;
+                    iconify-icon(icon="mingcute:align-left-line")
+                    span 大约 #{display} 字
+
+        .excerpt #{strip_html(post.content).substring(0, 200)}...
+
+        a(href=url_for(post.path) class="read")
+            span 阅读全文
+            iconify-icon(icon="oui:sort-right")
+- })
+
+include paginator

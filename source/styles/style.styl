@@ -1,0 +1,19 @@
+/* 这里放的是网页的全局属性（包括基础属性和让网页能看的） */
+@import "theme.styl"
+@import "layout.styl"
+@import "_include/paginator.styl"
+@import "_include/markdown.styl"
+
+* {
+  margin 0
+  padding 0
+}
+
+body {
+  /* 只有这里最长，只能忍着强迫症去写了（） */
+  background-color var(--bg-primary-color)
+
+  &::-webkit-scrollbar {
+    display none
+  }
+}

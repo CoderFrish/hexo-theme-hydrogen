@@ -1,0 +1,33 @@
+.background
+    .layout
+        -  const subtitle = theme.subtitle || config.title;
+        h1 #{subtitle}
+
+        .navigation
+            ul
+                li
+                    a(href="/" class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
+                //li
+                //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
+
+        .toolbar
+            // 等我后面再慢慢写吧
+            // 页需慢慢写，心急则重写（）
+            ul
+                - if (theme.toolbars.theme_switcher.enabled) {
+                    li
+                        button(onclick="switch_theme()")
+                            iconify-icon(icon="tabler:sun", id="theme_btn_icon")
+                - }
+
+                li(id="mobile_menu_btn")
+                    button(onclick="open_mobile_nav()")
+                        iconify-icon(icon="material-symbols:menu-rounded")
+
+.mobile-background.inactive
+    .mobile-layout
+        ul
+            li
+                a(href=url_for("/") class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
+            //li
+            //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签

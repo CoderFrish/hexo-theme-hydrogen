@@ -1,0 +1,22 @@
+name: Publish Release CI
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: default
+
+    steps:
+      - name: Checkout Git Repository
+        uses: actions/checkout@v6
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: hexo-theme-hydrogen
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
