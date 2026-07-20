@@ -1,3 +1,6 @@
+@import "../_widget/author.styl"
+@import "../_widget/recent.styl"
+
 main .index-layout {
   max-width 1280px
   margin 0 auto
@@ -108,110 +111,8 @@ main .index-layout .sidebar {
   gap var(--spacing-md)
 }
 
-main .index-layout .sidebar .author, .recent {
-  background-color var(--bg-secondary-color)
-  border 1px solid var(--border-normal-color)
-  border-radius var(--radius-md)
-  padding var(--spacing-lg)
-}
-
-main .index-layout .sidebar .recent h3 {
-  font-size var(--text-sm)
-  font-weight 500
-  color var(--text-muted-color)
-  text-transform uppercase
-  letter-spacing 0.05em
-  margin-bottom var(--spacing-md)
-}
-
-main .index-layout .sidebar .recent ul {
-  list-style none
-}
-
-main .index-layout .sidebar .recent ul li {
-  padding var(--spacing-sm) 0
-  border-bottom 1px solid var(--border-normal-color)
-
-  a {
-    text-decoration none
-    color var(--text-primary-color)
-    transition all 150ms ease
-
-    display flex
-    justify-content space-between
-    gap var(--spacing-sm)
-
-    &:hover {
-      .title {
-        color var(--primary-normal-color)
-      }
-    }
-  }
-
-  a .title {
-    overflow hidden
-    text-overflow ellipsis
-    white-space nowrap
-
-    flex 1
-    padding-right var(--spacing-sm)
-  }
-
-  a .date {
-    border-left 1px solid var(--border-normal-color)
-    color var(--text-muted-color)
-    padding-left var(--spacing-sm)
-  }
-
-  &:last-child {
-    padding var(--spacing-sm) 0 0 0
-    border-bottom none
-  }
-}
-
-main .index-layout .sidebar .author {
-  text-align center
-}
-
-main .index-layout .sidebar .author .avatar {
-  width 80px
-  height 80px
-  margin 0 auto var(--spacing-lg)
-}
-
-main .index-layout .sidebar .author .avatar img {
-  border-radius var(--redius-full)
-
-  width 100%
-  height 100%
-  object-fit cover
-}
-
-main .index-layout .sidebar .author h3 {
-  font-weight 600
-  font-size var(--text-lg)
-  color var(--text-primary-color)
-  margin 0 auto var(--spacing-xs)
-}
-
-main .index-layout .sidebar .author p {
-  font-size var(--text-sm)
-  color var(--text-muted-color)
-  margin-bottom var(--spacing-md)
-}
-
-main .index-layout .sidebar .author .about a {
-  background-color var(--primary-normal-color)
-  color var(--text-inverse-color)
-  border none
-  text-decoration none
-  border-radius var(--radius-md)
-
-  display inline-block
-  width calc(100% - 40px)
-  padding var(--spacing-sm) 0
-
-  &:hover {
-    cursor pointer;
+@media (max-width: 1024px) {
+  main .index-layout .sidebar {
+    display none
   }
 }
