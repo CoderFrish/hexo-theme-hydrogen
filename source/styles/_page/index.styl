@@ -1,0 +1,118 @@
+@import "../_widget/author.styl"
+@import "../_widget/recent.styl"
+
+main .index-layout {
+  max-width 1280px
+  margin 0 auto
+  padding 0 var(--spacing-lg)
+
+  display flex
+  flex-direction row
+  gap var(--spacing-md)
+  flex-wrap nowrap
+}
+
+main .index-layout .articles {
+  flex 1
+  display flex
+  flex-direction column
+  gap var(--spacing-xl)
+}
+
+main .index-layout .articles .article {
+  border-radius var(--radius-md)
+  background-color var(--bg-primary-color)
+  border 1px solid var(--border-normal-color)
+  transition all 150ms ease
+
+  padding var(--spacing-md)
+
+  &:hover {
+    border-color var(--primary-normal-color)
+    box-shadow var(--shadow-lg)
+  }
+}
+
+main .index-layout .articles .article a {
+  text-decoration none
+}
+
+main .index-layout .articles .article .meta {
+  margin-bottom var(--spacing-sm);
+}
+
+main .index-layout .articles .article .meta ul {
+  list-style: none;
+  display flex
+  align-items center
+  flex-direction row
+  gap var(--spacing-sm)
+}
+
+main .index-layout .articles .article .meta ul li {
+  color var(--text-muted-color)
+  font-size var(--text-sm)
+
+  display flex
+  align-items center
+  gap var(--spacing-xs)
+}
+
+main .index-layout .articles .article .excerpt {
+  color var(--text-secondary-color)
+  line-height 1.75
+  margin-bottom var(--spacing-sm);
+}
+
+main .index-layout .articles .article .cover {
+  width 100%
+  margin-bottom var(--spacing-xs)
+  border-radius var(--radius-md)
+  object-fit cover
+}
+
+main .index-layout .articles .article .title {
+  display block
+  margin-bottom var(--spacing-sm);
+  font-size var(--text-xl)
+  line-height 1.25
+  font-weight 600
+  color var(--text-primary-color)
+  transition all 150ms ease
+
+  &:hover {
+    color var(--primary-normal-color)
+  }
+}
+
+main .index-layout .articles .article .read {
+  display inline-flex
+  align-items center
+  gap var(--spacing-xs)
+  transition all 150ms ease
+  color var(--primary-normal-color)
+  font-size var(--text-sm)
+  font-weight 500
+
+  &:hover {
+    gap var(--spacing-sm)
+  }
+}
+
+main .index-layout .articles .article .read iconify-icon {
+  display inline-flex
+  align-items center
+}
+
+main .index-layout .sidebar {
+  width 300px
+  display flex
+  flex-direction column
+  gap var(--spacing-md)
+}
+
+@media (max-width: 1024px) {
+  main .index-layout .sidebar {
+    display none
+  }
+}

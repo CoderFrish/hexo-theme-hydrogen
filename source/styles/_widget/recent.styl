@@ -1,0 +1,60 @@
+main .index-layout .sidebar .author, .recent {
+  background-color var(--bg-secondary-color)
+  border 1px solid var(--border-normal-color)
+  border-radius var(--radius-md)
+  padding var(--spacing-lg)
+}
+
+main .index-layout .sidebar .recent h3 {
+  font-size var(--text-sm)
+  font-weight 500
+  color var(--text-muted-color)
+  text-transform uppercase
+  letter-spacing 0.05em
+  margin-bottom var(--spacing-md)
+}
+
+main .index-layout .sidebar .recent ul {
+  list-style none
+}
+
+main .index-layout .sidebar .recent ul li {
+  padding var(--spacing-sm) 0
+  border-bottom 1px solid var(--border-normal-color)
+
+  a {
+    text-decoration none
+    color var(--text-primary-color)
+    transition all 150ms ease
+
+    display flex
+    justify-content space-between
+    gap var(--spacing-sm)
+
+    &:hover {
+      .title {
+        color var(--primary-normal-color)
+      }
+    }
+  }
+
+  a .title {
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+
+    flex 1
+    padding-right var(--spacing-sm)
+  }
+
+  a .date {
+    border-left 1px solid var(--border-normal-color)
+    color var(--text-muted-color)
+    padding-left var(--spacing-sm)
+  }
+
+  &:last-child {
+    padding var(--spacing-sm) 0 0 0
+    border-bottom none
+  }
+}
