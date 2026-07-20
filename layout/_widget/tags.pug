@@ -1,0 +1,10 @@
+- if (site.tags.length && theme.widget.tags.enabled) {
+    .tags
+        h3 标签
+
+        ul
+            - site.tags.sort('name').each(function(tag) {
+                li
+                    a(href=url_for(tag.path)) #{tag.name} #[span (#{tag.posts.length})]
+            - })
+- }

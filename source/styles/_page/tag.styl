@@ -1,0 +1,50 @@
+main .tag-layout {
+  max-width 320px
+  margin 0 auto
+  padding var(--spacing-xl) 0
+}
+
+main .tag-layout .meta {
+  width 100%
+  display inline-flex
+  justify-content center
+  align-items center
+  flex-direction column
+  padding var(--spacing-sm) 0
+  border-bottom 2px dashed var(--code-border-color)
+}
+
+main .tag-layout .meta span {
+  color var(--text-secondary-color)
+}
+
+main .tag-layout ul {
+  list-style none
+}
+
+main .tag-layout ul li {
+  padding var(--spacing-sm)
+  display flex
+  align-items center
+  flex-direction row
+  gap var(--spacing-md)
+}
+
+main .tag-layout ul li a {
+  @extend base-link
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+}
+
+main .tag-layout ul li span {
+  color var(--text-muted-color)
+}
+
+main .tag-layout .meta h1 {
+  color var(--text-primary-color)
+}
+
+main .tag-layout .meta h1 iconify-icon {
+  color var(--text-muted-color)
+}

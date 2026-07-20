@@ -1,0 +1,56 @@
+main .tags-layout {
+  max-width 480px
+  margin 0 auto
+  padding var(--spacing-xl) 0
+
+  display flex
+  text-align center
+  flex-direction column
+}
+
+main .tags-layout .tags {
+  background-color var(--bg-secondary-color)
+  border 1px solid var(--border-normal-color)
+  padding var(--spacing-xl)
+  border-radius var(--radius-lg)
+
+  display flex
+  gap var(--spacing-md)
+  flex-direction row
+  flex-wrap wrap
+}
+
+main .tags-layout h1 {
+  color var(--text-primary-color)
+  margin-bottom var(--spacing-sm)
+}
+
+main .tags-layout span {
+  color var(--text-muted-color)
+  margin-bottom var(--spacing-xl)
+}
+
+main .tags-layout .tags a {
+  @extend base-link
+
+  display inline-flex
+  justify-content center
+  align-items center
+
+  padding var(--spacing-xs) var(--spacing-md)
+  background-color var(--bg-primary-color)
+  border-radius var(--radius-lg)
+  border 1px solid var(--border-normal-color)
+  gap var(--spacing-xs)
+
+  &:hover {
+    background-color var(--primary-light-color)
+    border 1px solid var(--primary-normal-color)
+  }
+}
+
+main .tags-layout .tags span {
+  margin 0
+  color var(--text-muted-color)
+  font-size var(--text-sm)
+}

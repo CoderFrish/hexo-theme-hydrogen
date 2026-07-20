@@ -1,0 +1,11 @@
+extends _utilities/base
+
+block content
+    .tags-layout
+        h1 标签
+        span 共 #{site.tags.length} 个标签
+
+        .tags
+            - site.tags.sort('name').each(function(tag) {
+                a(href=url_for(tag.path)) #{tag.name} #[span (#{tag.posts.length})]
+            - })

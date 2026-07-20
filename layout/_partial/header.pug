@@ -1,14 +1,17 @@
+mixin navigation
+    ul
+        li
+            a(href=url_for("/") class=((is_current("") || is_current("/page")) ? "active" : "inactive")) 主页
+        li
+            a(href="/tags" class=((is_current("/tag") || is_current("/tags")) ? "active" : "inactive")) 标签
+
 .background
     .layout
         -  const subtitle = theme.subtitle || config.title;
         h1 #{subtitle}
 
         .navigation
-            ul
-                li
-                    a(href="/" class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
-                //li
-                //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
+            +navigation
 
         .toolbar
             // 等我后面再慢慢写吧
@@ -26,8 +29,5 @@
 
 .mobile-background.inactive
     .mobile-layout
-        ul
-            li
-                a(href=url_for("/") class=(((current_path() === "/index") || (current_path() === "/page/" + page.current + "/index"))? "active": "inactive")) 主页
-            //li
-            //    a(href="/tags" class=(current_path() === "/tags" ? "active" : "inactive")) 标签
+        +navigation
+

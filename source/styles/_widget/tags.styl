@@ -1,0 +1,39 @@
+main .index-layout .sidebar .tags {
+  @extend base-widget
+}
+
+main .index-layout .sidebar .tags h3 {
+  @extend base-widget-title
+}
+
+main .index-layout .sidebar .tags ul {
+  list-style none
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  gap var(--spacing-xs)
+
+  li a {
+    display inline-flex
+    align-items center
+    justify-content center
+    text-decoration none
+    transition all 150ms ease
+
+    color var(--text-secondary-color)
+    padding var(--spacing-xs) var(--spacing-sm)
+    border-radius var(--radius-xl)
+    background-color var(--bg-tertiary-color)
+    font-size var(--text-xs)
+    gap var(--spacing-xs)
+
+    span {
+      color var(--text-muted-color)
+    }
+
+    &:hover {
+      color var(--primary-normal-color)
+      background-color var(--primary-light-color)
+    }
+  }
+}

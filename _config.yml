@@ -11,6 +11,8 @@ author:
 widget:
   recent:
     enabled: true
+  tags:
+    enabled: true
 
 # 工具栏的设置
 toolbars:

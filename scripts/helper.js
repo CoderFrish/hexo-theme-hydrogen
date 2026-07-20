@@ -1,7 +1,14 @@
-hexo.extend.helper.register("current_path", function() {
-    const current = this.page.path || "";
-    return "/" + current
+hexo.extend.helper.register("is_current", function(path) {
+    const currentPath = this.page.path || "";
+    const targetPath = path.replace(/^\//, "").replace(/\/$/, "");
+    const current = currentPath
         .replace(/^\//, "")
         .replace(/\/$/, "")
-        .replace(/\.html$/, "")
+        .replace(/index\.html$/, "");
+
+    if (targetPath === "") {
+        return current === "" || current === "index.html";
+    }
+
+    return current.startsWith(targetPath);
 })

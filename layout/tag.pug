@@ -1,0 +1,16 @@
+extends _utilities/base
+
+block content
+    .tag-layout
+        .meta
+            h1 #[iconify-icon(icon="ic:round-tag")] #{page.tag}
+            span 共 #{page.posts.length} 篇文章
+
+        ul
+            - page.posts.each(function(post) {
+                li
+                    span(class="date") #{date(post.date, 'YYYY-MM-DD')}
+                    a(href=url_for(post.path)) #{post.title}
+            - })
+
+        include _component/paginator

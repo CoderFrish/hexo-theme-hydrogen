@@ -1,17 +1,9 @@
-main .index-layout .sidebar .author, .recent {
-  background-color var(--bg-secondary-color)
-  border 1px solid var(--border-normal-color)
-  border-radius var(--radius-md)
-  padding var(--spacing-lg)
+main .index-layout .sidebar .recent {
+  @extend base-widget
 }
 
 main .index-layout .sidebar .recent h3 {
-  font-size var(--text-sm)
-  font-weight 500
-  color var(--text-muted-color)
-  text-transform uppercase
-  letter-spacing 0.05em
-  margin-bottom var(--spacing-md)
+  @extend base-widget-title
 }
 
 main .index-layout .sidebar .recent ul {
