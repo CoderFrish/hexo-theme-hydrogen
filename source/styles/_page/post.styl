@@ -1,0 +1,54 @@
+main .post-layout {
+  max-width 1064px
+  margin 0 auto
+  padding 0 var(--spacing-lg)
+
+  display flex
+  flex-direction row
+  gap var(--spacing-md)
+  flex-wrap nowrap
+}
+
+main .post-layout .content {
+  flex 1
+  width 100%
+}
+
+main .post-layout .content .cover {
+  object-fit cover
+  width 100%
+  border-radius var(--radius-md)
+}
+
+main .post-layout .content .title {
+  margin-bottom  var(--spacing-md)
+}
+
+main .post-layout .content .meta {
+  padding-bottom var(--spacing-xl)
+}
+
+main .post-layout .content .meta ul {
+  display flex
+  align-items center
+  flex-direction row
+  gap var(--spacing-sm)
+}
+
+main .post-layout .content .cover .title {
+  font-size var(--text-3xl)
+  color var(--text-primary-color)
+}
+
+main .post-layout .content .cover .title .meta {
+  border-bottom  1px solid var(--border-normal-color)
+}
+
+main .post-layout .content .cover .title .meta ul {
+  list-style none
+}
+
+main .post-layout .content .cover .title .meta ul li {
+  color var(--text-muted-color)
+  font-size var(--text-sm)
+}
