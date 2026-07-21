@@ -27,7 +27,9 @@ main .index-layout .sidebar .author h3 {
 main .index-layout .sidebar .author p {
   font-size var(--text-sm)
   color var(--text-muted-color)
-  margin-bottom var(--spacing-md)
+  padding-bottom var(--spacing-sm)
+  margin-bottom var(--spacing-xs)
+  border-bottom 1px solid var(--border-normal-color)
 }
 
 main .index-layout .sidebar .author .about a {
@@ -43,5 +45,35 @@ main .index-layout .sidebar .author .about a {
 
   &:hover {
     cursor pointer;
+  }
+}
+
+main .index-layout .sidebar .author ul {
+  list-style none
+  margin var(--spacing-md) 0
+
+  display flex
+  justify-content center
+  align-items center
+  gap var(--spacing-md)
+}
+
+main .index-layout .sidebar .author li {
+  display inline-flex
+  justify-content center
+  align-items center
+
+  flex-direction column
+
+  .title {
+    font-size: var(--text-xs);
+    color: var(--text-muted-color);
+  }
+
+  .data {
+    display: block;
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--primary-normal-color);
   }
 }
