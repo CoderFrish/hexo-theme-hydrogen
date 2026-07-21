@@ -1,5 +1,16 @@
 {
   "name": "hexo-theme-hydrogen",
-  "version": "2.0.0",
-  "license": "BSD-3-Clause"
+  "version": "2.1.0",
+  "license": "BSD-3-Clause",
+  "description": "A lighting hexo theme.",
+  "author": {
+    "name": "Frish2021",
+    "url": "https://www.coderfrish.me/",
+    "email": "1573880184@qq.com"
+  },
+  "homepage": "https://github.com/CoderFrish/hexo-theme-hydrogen/",
+  "repository": {
+    "url": "https://github.com/CoderFrish/hexo-theme-hydrogen.git",
+    "type": "git"
+  }
 }

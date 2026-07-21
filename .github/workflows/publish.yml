@@ -19,7 +19,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          name: hexo-theme-hydrogen
+          name: hexo-theme-hydrogen v2.1.0
           generateReleaseNotes: true
           tag:  ${{ github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
