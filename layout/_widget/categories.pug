@@ -1,0 +1,6 @@
+- if (theme.widget.categories.enabled && site.categories.length) {
+    .categories
+        h3 分类
+
+        .content !{list_categories(site.categories, {depth: theme.widget.categories.depth})}
+- }

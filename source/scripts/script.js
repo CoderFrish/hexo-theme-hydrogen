@@ -33,7 +33,11 @@ function toggle_search() {
     const search_content = document.querySelector(".search-content");
     const search_input = document.getElementById("search");
 
-    if (!search_data) load_search_results()
+    if (!search_data) {
+        load_search_results()
+    } else {
+        search_content.innerHTML = "<div class='search-tip'>输入关键词进行检索</div>"
+    }
 
     if (!search) {
         search_box.classList.remove("inactive")

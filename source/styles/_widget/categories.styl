@@ -1,0 +1,30 @@
+main .index-layout .sidebar .categories {
+  @extend base-widget
+}
+
+main .index-layout .sidebar .categories h3 {
+  @extend base-widget-title
+}
+
+main .index-layout .sidebar .categories .content ul {
+  list-style none
+
+  display flex
+  flex-direction column
+  gap calc(var(--spacing-xs) + 5px)
+}
+
+main .index-layout .sidebar .categories .content li {
+  .category-list-link {
+    @extend base-link
+  }
+
+  .category-list-child {
+    padding-left calc(var(--spacing-sm) + 5px)
+    border-left 1px solid var(--border-normal-color)
+  }
+
+  .category-list-count {
+    display none
+  }
+}

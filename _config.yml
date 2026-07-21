@@ -13,6 +13,9 @@ widget:
     enabled: true
   tags:
     enabled: true
+  categories:
+    enabled: true
+    depth: 2 # 推荐为 2 更大的话估计会爆出部件
 
 theme:
   enabled: true
