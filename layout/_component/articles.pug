@@ -18,18 +18,13 @@
                     - const display = word >= 1000 ? (word / 1000).toFixed(1) + 'k' : word;
                     iconify-icon(icon="mingcute:align-left-line")
                     span 大约 #{display} 字
-                - if (post.tags.length) {
-                    li
-                        iconify-icon(icon="ic:round-tag")
-                        - let tagCount = 0;
-                        - for (tag in post.tags) {
-                            - if (tagCount > 3) {
-                            -   break
-                            - }
+                li
+                    iconify-icon(icon="ic:round-tag")
+                    - if (post.tags.length) {
+                        - post.tags.forEach(function (tag) {
                             a(href=url_for(tag.path)) #{tag.name}
-                            - tagCount++
-                        -}
-                - }
+                        - })
+                    - }
 
         .excerpt #{strip_html(post.content).substring(0, 200)}...
 

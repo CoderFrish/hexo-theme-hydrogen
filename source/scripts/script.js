@@ -54,6 +54,10 @@ function toggle_search() {
     }
 }
 
+function getSiteRoot() {
+    return (window.STARTER_CONFIG && window.STARTER_CONFIG.root) || '/';
+}
+
 function load_theme() {
     const theme = window.localStorage.getItem("data-theme");
 
@@ -64,7 +68,7 @@ function load_theme() {
 
 function load_search_results() {
     const search_content = document.querySelector(".search-content");
-    fetch("/content.json").then((response) => {
+    fetch("content.json").then((response) => {
         search_content.innerHTML = "<div class='search-tip'>加载数据中...</div>"
         return response.json()
     }).then((data) => {

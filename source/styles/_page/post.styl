@@ -5,13 +5,70 @@ main .post-layout {
 
   display flex
   flex-direction row
-  gap var(--spacing-md)
+  gap var(--spacing-2xl)
   flex-wrap nowrap
 }
 
 main .post-layout .content {
   flex 1
-  width 100%
+  width calc(100% - 300px - var(--spacing-md))
+}
+
+main .post-layout .content .markdown {
+  border-bottom 1px solid var(--border-normal-color)
+  margin-bottom var(--spacing-md)
+}
+
+main .post-layout .content .copyright {
+  display flex
+  flex-direction column
+  flex-wrap wrap
+  gap var(--spacing-sm)
+
+  padding: var(--spacing-lg);
+  font-size: var(--text-sm);
+  color: var(--text-secondary-color);
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--primary-normal-color);
+
+  span a {
+    color var(--primary-normal-color)
+    word-break: break-all;
+  }
+}
+
+main .post-layout .content .tags {
+  font-size var(--text-md)
+
+  display flex
+  align-items center
+  gap var(--spacing-sm)
+  margin-bottom var(--spacing-md)
+
+  ul {
+    list-style none
+    display flex
+    align-items center
+    flex-direction row
+    gap var(--spacing-xs)
+
+    li a {
+      display: inline-block
+      text-decoration none
+      padding: var(--spacing-xs) var(--spacing-sm)
+      font-size: var(--text-sm)
+      color: var(--primary-normal-color)
+      background-color: var(--primary-light-color)
+      border-radius: 9999px
+      transition: all 150ms ease
+
+      &:hover {
+        background-color var(--primary-hover-color)
+        color var(--text-inverse-color)
+      }
+    }
+  }
 }
 
 main .post-layout .content .cover {
@@ -45,4 +102,71 @@ main .post-layout .content .meta ul {
 main .post-layout .content .meta ul li {
   color var(--text-muted-color)
   font-size var(--text-sm)
+}
+
+main .post-layout .sidebar {
+  width 230px
+}
+
+@media (max-width: 1206px) {
+  main .post-layout .sidebar {
+    display none
+  }
+}
+
+main .post-layout .sidebar .toc-box {
+  width 100%
+  position sticky
+  top calc(var(--spacing-2xl) + 65px)
+  @extend base-widget
+}
+
+main .post-layout .sidebar .toc-box .toc-title {
+  @extend base-widget-title
+}
+
+main .post-layout .sidebar .toc-box .toc-content {
+  font-size: var(--text-sm);
+
+  ol {
+    list-style none
+    padding-left 0
+
+    display flex
+    flex-direction column
+    flex-wrap wrap
+    gap var(--spacing-xs)
+  }
+
+  a {
+    text-decoration none
+    padding var(--spacing-xs) 0
+    color var(--text-secondary-color)
+    transition all 150ms ease
+
+    &:hover {
+      color var(--primary-normal-color)
+      cursor pointer
+    }
+  }
+
+  .toc-level-2 {
+    padding-left var(--spacing-xs)
+  }
+
+  .toc-level-3 {
+    padding-left calc(var(--spacing-xs) * 2)
+  }
+
+  .toc-level-4 {
+    padding-left calc(var(--spacing-xs) * 3)
+  }
+
+  .toc-level-5 {
+    padding-left calc(var(--spacing-xs) * 4)
+  }
+
+  .toc-level-6 {
+    padding-left calc(var(--spacing-xs) * 5)
+  }
 }

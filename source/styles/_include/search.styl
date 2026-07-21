@@ -90,6 +90,26 @@
   overflow-y auto
   overflow-x hidden
   padding var(--spacing-md)
+
+  max-height 500px
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--text-muted-color);
+    border-radius: 9999px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-secondary-color);
+  }
 }
 
 .search .layout .search-content .search-tip {

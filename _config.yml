@@ -19,3 +19,9 @@ theme:
 
 search:
   enabled: true
+
+toc:
+  enabled: true
+  numbers: false
+  # 最大支持6层
+  depth: 6

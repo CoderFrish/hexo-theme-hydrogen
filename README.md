@@ -5,8 +5,8 @@ Frish正在重写中...
 
 重写进度: 
  - 主页(100/100)
- - 关于(100/80)
- - 文章(100/80)
+ - 关于(100/100)
+ - 文章(100/100)
  - 分类(100/0)
  - 标签(100/100)
  - 归档(100/50)
@@ -45,4 +45,20 @@ npm(pnpm/yarn) install hexo-theme-hydrogen
 ```diff
 - theme: 原来的主题
 + theme: hydrogen
+```
+
+## 4 | 如何使用
+
+如何创建关于页
+
+创建个index.md 在 `source/about` 文件夹里面，如果可以的话可以直接在 `source` 文件夹里面创建 about.md
+
+以下是关于页的基本格式
+
+```markdown
+---
+layout: about
+---
+
+#{你的markdown内容}
 ```
