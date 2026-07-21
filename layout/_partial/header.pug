@@ -17,10 +17,16 @@ mixin navigation
             // 等我后面再慢慢写吧
             // 页需慢慢写，心急则重写（）
             ul
-                - if (theme.toolbars.theme_switcher.enabled) {
+                - if (theme.theme.enabled) {
                     li
                         button(onclick="switch_theme()")
                             iconify-icon(icon="tabler:sun", id="theme_btn_icon")
+                - }
+
+                - if (theme.search.enabled) {
+                    li
+                        button(onclick="toggle_search()")
+                            iconify-icon(icon="material-symbols:search-rounded")
                 - }
 
                 li(id="mobile_menu_btn")

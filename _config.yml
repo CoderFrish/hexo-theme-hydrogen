@@ -14,8 +14,8 @@ widget:
   tags:
     enabled: true
 
-# 工具栏的设置
-toolbars:
-  # 主题色切换器
-  theme_switcher:
-    enabled: true
+theme:
+  enabled: true
+
+search:
+  enabled: true

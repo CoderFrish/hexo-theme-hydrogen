@@ -1,0 +1,10 @@
+.search.inactive
+    .layout
+        .search-box
+            .search-header
+                .search-input
+                    iconify-icon(icon="material-symbols:search-rounded")
+                    input(placeholder="搜索文章..." autocomplete="off" autofocus id="search")
+                    button(onclick="toggle_search()")
+                        iconify-icon(icon="material-symbols:close-rounded")
+            .search-content
