@@ -1,7 +1,6 @@
 # hexo-theme-hydrogen
 
 ## 1 | 概述
-Frish正在重写中...
 
 重写进度: 
  - 主页(100/100)
@@ -11,10 +10,6 @@ Frish正在重写中...
  - 标签(100/100)
  - 归档(100/0)
  - 搜索(100/70)
-
-已知尚未解决的问题 (现在只能解决一些问题了，重写这玩意代价太大了，每天从早上7点写到晚上9点)
- - 分类页无入口 (大概在2.2.0版本更新)
- - 链接过长无回车 (在2.2.0更新)
 
 前由 `hexo-theme-starter` 改进，后删除全部代码改用 stylus + pug 重写的轻量博客主题。
 
@@ -28,6 +23,7 @@ Frish正在重写中...
 - `hexo-generator-index`
 - `hexo-generator-tag`
 - `hexo-generator-category`
+- `hexo-generator-json-content`
 
 ## 3 | 安装
 
