@@ -46,7 +46,7 @@ npm(pnpm/yarn) install hexo-theme-hydrogen
 
 ## 4 | 如何使用
 
-如何创建关于页
+### 1 - 如何创建关于页
 
 创建个index.md 在 `source/about` 文件夹里面，如果可以的话可以直接在 `source` 文件夹里面创建 about.md
 
@@ -58,4 +58,30 @@ layout: about
 ---
 
 #{你的markdown内容}
+```
+
+### 2 - 关于如何使用数学表达式
+
+如果你安装的是 `hexo-renderer-marked` 渲染器，那么请卸载掉它，并且安装 `hexo-renderer-markdown-it` 渲染器
+
+安装指令
+
+```bash
+npm(yarn/pnpm) uninstall hexo-renderer-marked
+
+npm(yarn/pnpm) install hexo-renderer-markdown-it
+```
+
+于此同时，安装katex支持数学公式的相关依赖
+
+```bash
+npm(yarn/pnpm) install katex @renbaoshuo/markdown-it-katex
+```
+
+在根目录的 `_config.yml` 配置文件中添加下行
+
+```diff
++ markdown:
++   plugins:
++     - name: '@renbaoshuo/markdown-it-katex'
 ```
