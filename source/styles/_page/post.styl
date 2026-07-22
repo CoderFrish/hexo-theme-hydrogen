@@ -16,7 +16,7 @@ main .post-layout .content {
 
 main .post-layout .content .markdown {
   border-bottom 1px solid var(--border-normal-color)
-  margin-bottom var(--spacing-md)
+  margin var(--spacing-md) 0
 }
 
 main .post-layout .content .copyright {
@@ -106,6 +106,10 @@ main .post-layout .content .meta ul li {
 
 main .post-layout .sidebar {
   width 230px
+
+  &:empty {
+    display none
+  }
 }
 
 @media (max-width: 1206px) {

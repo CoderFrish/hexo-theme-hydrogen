@@ -40,8 +40,9 @@ block content
                 span #[strong 版权声明:] 本博客所有文章除特别声明外，均采用 #[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>] 许可协议。转载请注明出处！
 
         .sidebar
-            - if (theme.toc.enabled) {
+            - let toc_content = toc(page.content, { list_number: theme.toc.numbers, max_depth: theme.toc.depth })
+            - if (theme.toc.enabled && toc_content) {
                 .toc-box
                     .toc-title 目录
-                    .toc-content !{ toc(page.content, { list_number: theme.toc.numbers, max_depth: theme.toc.depth }) }
+                    .toc-content !{ toc_content }
             - }
