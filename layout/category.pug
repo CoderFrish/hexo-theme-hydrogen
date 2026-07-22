@@ -1,4 +1,11 @@
 extends _utilities/base
 
 block content
-    h1 hello world!!
+    .category-layout
+        .articles
+            .category-brand #[iconify-icon(icon="dashicons:category")] 分类 - #{page.category}
+
+            include _component/articles
+
+        .sidebar
+            include _component/sidebar
