@@ -1,15 +1,3 @@
-const html = document.documentElement
-
-function switch_theme() {
-    const theme = html.getAttribute("data-theme")
-    const theme_btn_icon = document.getElementById("theme_btn_icon")
-    const next_theme = theme === "light"? "dark" : "light";
-    const next_theme_btn_icon = theme === "light"? "basil:moon-outline": "tabler:sun"
-    theme_btn_icon.setAttribute("icon", next_theme_btn_icon)
-    html.setAttribute("data-theme", next_theme)
-    window.localStorage.setItem("data-theme", next_theme);
-}
-
 let collapse = false
 
 function open_mobile_nav() {
@@ -58,21 +46,9 @@ function toggle_search() {
     }
 }
 
-function getSiteRoot() {
-    return (window.STARTER_CONFIG && window.STARTER_CONFIG.root) || '/';
-}
-
-function load_theme() {
-    const theme = window.localStorage.getItem("data-theme");
-
-    if (theme) {
-        html.setAttribute("data-theme", theme);
-    }
-}
-
 function load_search_results() {
     const search_content = document.querySelector(".search-content");
-    fetch("content.json").then((response) => {
+    fetch("/content.json").then((response) => {
         search_content.innerHTML = "<div class='search-tip'>加载数据中...</div>"
         return response.json()
     }).then((data) => {
@@ -181,8 +157,6 @@ function main() {
             process_search_results();
         }, 300);
     })
-
-    load_theme()
 }
 
 if (document.readyState === "loading") {

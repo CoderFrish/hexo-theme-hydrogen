@@ -14,3 +14,19 @@ script(src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.mi
 - if (config.favicon) {
     link(rel="icon" href=url_for(config.favicon))
 - }
+
+script(src="https://giscus.app/client.js"
+    data-repo=theme.commits.repo.name
+    data-repo-id=theme.commits.repo.id
+    data-category=theme.commits.category.name
+    data-category-id=theme.commits.category.id
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+)

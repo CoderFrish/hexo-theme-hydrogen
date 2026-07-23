@@ -39,6 +39,8 @@ block content
                 span #[strong 本文链接:] #[a(href=url_for(page.permalink)) #{page.permalink}]
                 span #[strong 版权声明:] 本博客所有文章除特别声明外，均采用 #[<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>] 许可协议。转载请注明出处！
 
+            .giscus
+
         .sidebar
             - let toc_content = toc(page.content, { list_number: theme.toc.numbers, max_depth: theme.toc.depth })
             - if (theme.toc.enabled && toc_content) {
