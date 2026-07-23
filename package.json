@@ -12,5 +12,6 @@
   "repository": {
     "url": "https://github.com/CoderFrish/hexo-theme-hydrogen.git",
     "type": "git"
-  }
+  },
+  "keywords": ["hexo", "theme", "hydrogen"]
 }
